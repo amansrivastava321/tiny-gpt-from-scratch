@@ -16,8 +16,13 @@ def build_vocab(text):
             chars.append(i)
     return sorted(chars)
 
-# Step 2 - build_stoi (not yet solved)
-# TODO: implement
+# Step 2 - build_stoi
+def build_stoi(vocab):
+    """Return a dict mapping each character in vocab to its index."""
+    # TODO: map each character in vocab to its integer position
+    stoi = {ch:i for i,ch in enumerate(vocab)}
+
+    return stoi
 
 # Step 3 - build_itos (not yet solved)
 # TODO: implement
