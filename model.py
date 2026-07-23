@@ -273,8 +273,16 @@ def stable_softmax_1d(logits):
     exp_shifted = np.exp(shifted)
     return (exp_shifted/np.sum(exp_shifted))
 
-# Step 33 - stable_softmax_2d_rowwise (not yet solved)
-# TODO: implement
+# Step 33 - stable_softmax_2d_rowwise
+import numpy as np
+
+def stable_softmax_2d_rowwise(logits):
+    """Row-wise numerically stable softmax of a 2D logits array."""
+    # TODO: turn each row of logits into a probability distribution without overflowing
+    shifted = logits - np.max(logits,axis=1, keepdims=True)
+    exp_shifted = np.exp(shifted)
+    total = exp_shifted/np.sum(exp_shifted, axis=1, keepdims=True)
+    return total
 
 # Step 34 - read_text_file (not yet solved)
 # TODO: implement
