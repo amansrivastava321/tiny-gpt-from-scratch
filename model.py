@@ -366,8 +366,17 @@ def stack_x_batch(data, offsets, block_size):
         windows.append(window)
     return np.stack(windows)
 
-# Step 43 - stack_y_batch (not yet solved)
-# TODO: implement
+# Step 43 - stack_y_batch
+import numpy as np
+
+def stack_y_batch(data, offsets, block_size):
+    """Stack per-offset Y windows into a 2D (B, block_size) target matrix."""
+    # TODO: for each offset, take the length-block_size slice starting at i+1 and stack rows 
+    y_windows =[]
+    for offset in offsets:
+        y_window = slice_y_at_offset(data, offset, block_size)
+        y_windows.append(y_window)
+    return np.stack(y_windows)
 
 # Step 44 - get_batch (not yet solved)
 # TODO: implement
