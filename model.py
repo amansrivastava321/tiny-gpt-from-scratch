@@ -417,8 +417,14 @@ def vectorize_counts_add_at(vocab_size, data):
     np.add.at(N,(data[:-1],data[1:]),1)
     return N
 
-# Step 48 - add_one_smoothing (not yet solved)
-# TODO: implement
+# Step 48 - add_one_smoothing
+import numpy as np
+
+def add_one_smoothing(n_matrix):
+    """Return n_matrix with every entry incremented by 1 (Laplace smoothing)."""
+    # TODO: apply +1 Laplace smoothing to the bigram count matrix
+    N = 1+(n_matrix)
+    return N
 
 # Step 49 - row_sums_of_counts (not yet solved)
 # TODO: implement
