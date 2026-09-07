@@ -426,8 +426,13 @@ def add_one_smoothing(n_matrix):
     N = 1+(n_matrix)
     return N
 
-# Step 49 - row_sums_of_counts (not yet solved)
-# TODO: implement
+# Step 49 - row_sums_of_counts
+def row_sums_of_counts(n_matrix):
+    """Return per-row sums of n_matrix with shape (V, 1)."""
+    # TODO: compute per-row sums of the count matrix as a column vector for normalization.
+    N = sum_keepdims(n_matrix,axis=1)
+
+    return N
 
 # Step 50 - normalize_counts_to_probs (not yet solved)
 # TODO: implement
